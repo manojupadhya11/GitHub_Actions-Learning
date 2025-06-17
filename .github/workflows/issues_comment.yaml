@@ -26,20 +26,19 @@ jobs:
           reactions: '+1'
 
   comment-with-api:
-    runs-on: ubuntu
+    runs-on: ubuntu-latest
     steps:
-    - name: create comment with API
-      run: |
-        gh api -X POST \
-          https://api.github.com/repo/${ORGANIZATION}/${REPOSITORY}/issues/${ISSUE_NUMBER/comments \
-          -f body='
-          Comment but from the API call not action
-          '
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        ORGANIZATION: ${{ github.event.organization.login }}
-        REPOSITORY: ${{ github.event.repository.name}}
-        ISSUE_NUMBER: ${{ github.event.issue.number }}
+      - name: Create comment with API
+        run: |
+          gh api -X POST \
+            /repos/${ORGANIZATION}/${REPOSITORY}/issues/${ISSUE_NUMBER}/comments \
+            --raw-field body='Comment but from the API call, not action'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ORGANIZATION: ${{ github.event.repository.owner.login }}
+          REPOSITORY: ${{ github.event.repository.name }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+
         
        
   
