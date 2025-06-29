@@ -100,3 +100,16 @@ jobs:
 │       └── sample.yml   ← GitHub Actions workflow file
 └── README.md            ← This documentation
 ```
+
+```
+| Term         | Description                                        |
+| ------------ | -------------------------------------------------- |
+| **Workflow** | Full automation definition file                    |
+| **Runner**   | The environment that executes your jobs            |
+| **Job**      | A sequence of steps in a runner                    |
+| **Step**     | A single task (e.g., run a command, use an action) |
+| **Action**   | A prebuilt or custom reusable unit of work         |
+| **Event**    | A GitHub activity that triggers a workflow         |
+
+
+```
