@@ -119,11 +119,12 @@ on:
         default: 'latest'
 ```
 ```yaml
-🧠 Input Variable Properties
-Property	Description
-description	A short explanation shown in the UI
-required	Whether this input must be provided
-default	Default value used if not provided
+| Property      | Description                         |
+| ------------- | ----------------------------------- |
+| `description` | A short explanation shown in the UI |
+| `required`    | Whether this input must be provided |
+| `default`     | Default value used if not provided  |
+
 ```
 
 ## 🚀 How to Use Inputs in Workflow Steps
