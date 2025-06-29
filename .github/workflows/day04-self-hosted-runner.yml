@@ -9,7 +9,7 @@ env:
 
 jobs:
   test_context_variable:
-    runs-on: ip-172-31-39-225
+    runs-on: self-hosted
     steps:
       - name: "Checking the Context Variable"
         run: |
