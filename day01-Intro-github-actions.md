@@ -93,9 +93,10 @@ jobs:
 ```
 
 ### Project Structure
-
+```
 .
 ├── .github
 │   └── workflows
 │       └── sample.yml   ← GitHub Actions workflow file
 └── README.md            ← This documentation
+```
