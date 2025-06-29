@@ -1,0 +1,23 @@
+name: Testing configuration Variables
+
+on:
+  workflow_dispatch
+
+#Scope of this variable is workflow level
+env:
+  cloud: aws-cloud
+
+jobs:
+  greeting_job:
+    runs-on: ubuntu-latest
+    #scope of the below variable is job level
+    env:
+      Greeting: Hello
+    steps:
+      - name: "Greeting step"
+        run: echo "$Greeting $First_name is using $cloud with project ${{vars.Project_ID }}"
+        # ${{vars.Project_ID }} this is the configurable variable which can also be used in multiple workflows
+        
+        #scope of the below variable is step level
+        env:
+          First_name: Manoj
