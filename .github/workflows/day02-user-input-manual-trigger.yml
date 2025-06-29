@@ -1,0 +1,32 @@
+name: Test User input workflow
+
+on:
+  workflow_dispatch:
+
+  #Input the numbers
+    inputs:
+      #numer 1 definition
+      number1:
+        #small description
+        description: "First number"
+        #Default value if no value is explicitly provided
+        default: '0'
+        #Input has to be provided for workflow ro run required = true makes the number1 must required variable
+        required: true
+      number2:
+        description: "Second Number"
+        default: '0'
+        required: true
+
+jobs:
+  add_numbers:
+    runs-on: ubuntu-latest
+    steps:
+      - name: add numbers
+        id: sum
+        run: echo "::set-output name=sum::$((${{ inputs.number1 }} + ${{ inputs.number2 }}))"
+
+      - name: display sum
+        run: echo "The sum of ${{ inputs.number1 }} and ${{ inputs.number2 }} is ${{ steps.sum.outputs.sum }}"
+        
+  
