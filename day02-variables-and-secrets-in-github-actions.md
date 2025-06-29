@@ -19,7 +19,7 @@ on:
         description: "Your name"
         required: true
         default: "John"
-
+```
 
 ## Environment Variables (env)
 Environment variables can be declared at the workflow, job, or step level.
@@ -28,7 +28,7 @@ Environment variables can be declared at the workflow, job, or step level.
 ```yaml
   env:
   GLOBAL_ENV: "I am global"
-
+```
 🔹 job-level env:
 ```yaml
   jobs:
