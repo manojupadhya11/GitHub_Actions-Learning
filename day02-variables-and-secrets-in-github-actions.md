@@ -97,3 +97,45 @@ Go to Repository > Settings > Secrets and create MY_SECRET.
 run: echo "${{ secrets.MY_SECRET }}"
 Note: GitHub masks secrets in logs to protect sensitive data.
 ```
+
+## 🔹 Input Variables in GitHub Actions
+Input variables allow you to manually pass data into a workflow when it's triggered using the workflow_dispatch event. These are useful for dynamic workflows like deployments, testing with parameters, or triggering conditional logic.
+
+
+✅ How to Define Input Variables
+Define them under the on.workflow_dispatch.inputs section:
+
+```yaml
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Environment to deploy to'
+        required: true
+        default: 'dev'
+      version:
+        description: 'App version'
+        required: false
+        default: 'latest'
+```
+```yaml
+🧠 Input Variable Properties
+Property	Description
+description	A short explanation shown in the UI
+required	Whether this input must be provided
+default	Default value used if not provided
+```
+
+## 🚀 How to Use Inputs in Workflow Steps
+```
+jobs:
+  example:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print inputs
+        run: |
+          echo "Environment: ${{ inputs.environment }}"
+          echo "Version: ${{ inputs.version }}"
+```
+
+Inputs are accessed via ${{ inputs.input_name }} and are always strings.
