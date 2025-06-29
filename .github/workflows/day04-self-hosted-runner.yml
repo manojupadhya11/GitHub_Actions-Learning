@@ -1,4 +1,4 @@
-name: Testing context Variables
+name: Testing self hosted runners
 
 on:
   workflow_dispatch
