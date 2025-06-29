@@ -20,3 +20,11 @@ These are temporary VMs created by GitHub. They come with pre-installed tools an
 runs-on: ubuntu-latest   # Linux
 runs-on: windows-latest  # Windows
 runs-on: macos-latest    # macOS
+```
+```yaml
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Running on Linux"
+```
