@@ -57,7 +57,7 @@ jobs:
       - name: print repository variable
         run: echo "Environment = ${{ vars.APP_ENV }}"
         
-  # This workflow contains a single job called "build"
+  # The second job of the workflow
   build:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
