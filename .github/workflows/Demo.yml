@@ -87,7 +87,7 @@ jobs:
 
       #printing the local environment variable which is created under job build
       - name: print Local Env Variable
-        run: echo "Application Environment is $ENVIRONMENT"
+        run: echo "Application Environment is  ${{ env.ENVIRONMENT }}"
 
       #Example for defining env variable at step level
       
