@@ -33,7 +33,7 @@ jobs:
       - name: print hello
         run: |
           pwd
-          ls
+          ls -la
           whoami
         
   # This workflow contains a single job called "build"
