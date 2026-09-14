@@ -35,3 +35,7 @@ jobs:
           echo "Environment = ${{ inputs.environment }}"
           echo "Run tests = ${{ inputs.run_tests }}"
           echo "Version = ${{ inputs.version }}"
+      - name: Run Tests
+        if: ${{ inputs.run_tests }}
+        run: echo "Running tests..."
+
