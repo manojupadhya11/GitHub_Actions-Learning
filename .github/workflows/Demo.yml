@@ -83,5 +83,13 @@ jobs:
       #printing the local environment variable which is created under job build
       - name: print Local Env Variable
         run: echo "Application Environment is $ENVIRONMENT"
+
+      #Example for defining env variable at step level
+      
+      - name: print Local Env Variable
+        env:
+          VERSION: "1.0"
+        run: echo "Application Version is $VERSION"
+      
       
       
