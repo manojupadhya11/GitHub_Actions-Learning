@@ -1,0 +1,37 @@
+name: Manual Workflow
+
+on:
+  workflow_dispatch:
+    inputs:
+
+      environment:
+        description: Select environment
+        required: true
+        type: choice
+        options:
+          - dev
+          - test
+          - prod
+
+      run_tests:
+        description: Run tests?
+        required: true
+        type: boolean
+        default: true
+
+      version:
+        description: Application version
+        required: true
+        type: string
+        default: "1.0.0"
+
+jobs:
+  demo:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Show Inputs
+        run: |
+          echo "Environment = ${{ inputs.environment }}"
+          echo "Run tests = ${{ inputs.run_tests }}"
+          echo "Version = ${{ inputs.version }}"
