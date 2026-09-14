@@ -15,20 +15,15 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
+      
   hello:
     runs-on: ubuntu-latest
     steps:
       - name: print my name
         run: echo "Manoj Upadhya"
         
-      - name: print message
-        run: echo "Upadhya"
-      
-      - name: print my name
-        run: echo "Manoj"
-      
-      - name: print hi
-        run: echo "hi Upadhya"
+      - name: checkout repository
+        uses: actions/checkout@v7
       
       - name: print hello
         run: |
