@@ -67,3 +67,7 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+      #Print Global Env variable
+      - name: print Global Env Variable
+        run: echo "Application name is $APP_NAME"
+      
