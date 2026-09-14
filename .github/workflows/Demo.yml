@@ -5,10 +5,10 @@ name: CI
 # Controls when the workflow will run
 on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
-  #push:
-    #branches: [ "main" ]
-  #pull_request:
-    #branches: [ "main" ]
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -30,6 +30,15 @@ jobs:
           pwd
           ls -la
           whoami
+      #github context or builtin variables which provides information about github actions
+      - name: show github information
+        run: |
+          echo "Repository: ${{github.repository}}"
+          echo "Triggered By: ${{github.actor}}"
+          echo "Branch: ${{github.ref}}"
+          echo "commit: ${{github.sha}}"
+          echo "Event: ${{github.event_name}}"
+          echo "workflow: ${{github.workflow}}"
         
   # This workflow contains a single job called "build"
   build:
