@@ -31,7 +31,10 @@ jobs:
         run: echo "hi Upadhya"
       
       - name: print hello
-        run: echo "hello Upadhya"
+        run: |
+          pwd
+          ls
+          whoami
         
   # This workflow contains a single job called "build"
   build:
