@@ -21,6 +21,18 @@ jobs:
       - name: print my name
         run: echo "Manoj Upadhya"
         
+      - name: print message
+        run: echo "Upadhya"
+      
+      - name: print my name
+        run: echo "Manoj"
+      
+      - name: print hi
+        run: echo "hi Upadhya"
+      
+      - name: print hello
+        run: echo "hello Upadhya"
+        
   # This workflow contains a single job called "build"
   build:
     # The type of runner that the job will run on
