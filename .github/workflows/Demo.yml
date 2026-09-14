@@ -19,17 +19,21 @@ jobs:
   hello:
     runs-on: ubuntu-latest
     steps:
+      #Simple echo job printing
       - name: print my name
         run: echo "Manoj Upadhya"
-        
+
+      #demo for checkout actions which checkouts the current git repository, same as git clone
       - name: checkout repository
         uses: actions/checkout@v7
-      
+        
+      #Running multiple commands in one run using |
       - name: print hello
         run: |
           pwd
           ls -la
           whoami
+          
       #github context or builtin variables which provides information about github actions
       - name: show github information
         run: |
