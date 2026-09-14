@@ -55,7 +55,7 @@ jobs:
         
       #Repository
       - name: print repository variable
-        run: echo "Environment = {{vars.APP_ENV}}"
+        run: echo "Environment = ${{ vars.APP_ENV }}"
         
   # This workflow contains a single job called "build"
   build:
@@ -98,7 +98,7 @@ jobs:
 
         #Repository
       - name: print repository variable
-        run: echo "Environment = {{vars.APP_ENV}}"
+        run: echo "Environment = ${{ vars.APP_ENV }}"
       
       
       
