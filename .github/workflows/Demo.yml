@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: print my name
-        run: echo "Manoj Upadhya
+        run: echo "Manoj Upadhya"
         
   # This workflow contains a single job called "build"
   build:
